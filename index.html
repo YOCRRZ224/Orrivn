@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ORRIVN — Next-Gen Media Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+
+<style>
+:root{
+    --bg:#0f1724;
+    --muted:#9aa4b2;
+    --accent1:#06b6d4;
+    --accent2:#00ffa8;
+    --glass:rgba(255,255,255,0.05);
+    --glass-border:rgba(255,255,255,0.08);
+    --radius:14px;
+
+    font-family:Inter,system-ui;
+}
+body{
+    margin:0; background:#06101d;
+    color:white;
+}
+
+/* NAV */
+header{
+    padding:18px 24px;
+    display:flex; justify-content:space-between; align-items:center;
+    position:sticky; top:0; z-index:100;
+    backdrop-filter:blur(10px);
+}
+nav{display:flex; gap:12px;}
+.nav-btn{
+    padding:8px 14px; border-radius:10px;
+    background:transparent; border:1px solid var(--glass-border);
+    color:var(--muted); font-weight:600; cursor:pointer;
+}
+.nav-btn.cta{
+    background:linear-gradient(90deg,var(--accent1),var(--accent2));
+    color:#041014; border:none;
+}
+.logo{
+    width:44px;height:44px;border-radius:12px;
+    background:linear-gradient(135deg,var(--accent1),var(--accent2));
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;color:#041014;
+}
+.logo img{
+      width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;   /* or: contain */
+    max-width: 100%;
+    border-radius: 9px;
+}
+/* HERO */
+.hero{
+    display:flex;
+    flex-wrap:wrap;
+    padding:60px 7vw;
+    gap:40px;
+}
+.hero-left{
+    flex:1 1 320px;
+    max-width:620px;
+}
+h2{
+    font-family:Orbitron;
+    margin:0 0 12px;
+    font-size:42px;
+}
+h2 .accent{
+    background:linear-gradient(90deg,var(--accent2),var(--accent1));
+    -webkit-background-clip:text;
+    color:transparent;
+}
+.lead{color:var(--muted); font-size:16px;}
+
+.hero-cta{display:flex; gap:14px; flex-wrap:wrap; margin-top:18px;}
+
+.btn{
+    padding:12px 18px; border-radius:var(--radius);
+    border:1px solid var(--glass-border);
+    background:var(--glass); font-weight:600; color:white;
+}
+.btn.primary{
+    background:linear-gradient(90deg,var(--accent1),var(--accent2));
+    border:none; color:#031012;
+}
+
+.hero-right{
+    flex:1 1 320px;
+    max-width:460px;
+}
+.preview-card{
+    background:rgba(255,255,255,0.03);
+    padding:14px; border-radius:var(--radius);
+    border:1px solid var(--glass-border);
+}
+.preview-thumb{
+    height:220px; border-radius:var(--radius);
+    overflow:hidden; margin-top:10px;
+}
+.preview-thumb img{
+    width:100%; height:100%; object-fit:cover;
+}
+
+/* FEATURES */
+.features{
+    padding:40px 7vw;
+}
+.features-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+.feature{
+    padding:18px; 
+    border-radius:var(--radius);
+    background:rgba(255,255,255,0.03);
+    border:1px solid var(--glass-border);
+}
+.feature h3{margin:0 0 8px; font-size:18px;}
+.feature p{margin:0; color:var(--muted); font-size:14px;}
+
+/* PARALLAX GALLERY */
+.parallax-strip{
+    padding:34px 0;
+    overflow-x:auto;
+}
+.parallax-inner{
+    display:flex;
+    gap:20px; padding-left:7vw;
+}
+.parallax-item{
+    min-width:300px; height:200px;
+    border-radius:var(--radius);
+    background-size:cover; background-position:center;
+    flex-shrink:0;
+    border:1px solid rgba(255,255,255,0.06);
+}
+
+/* CTA BANNER */
+.cta-banner{
+    margin:40px 7vw;
+    padding:22px;
+    border-radius:var(--radius);
+    background:rgba(0,255,130,0.06);
+    border:1px solid var(--glass-border);
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px;
+}
+
+/* DOWNLOAD BLOCK */
+.download{
+    padding:40px 7vw 110px;
+}
+.download-grid{
+    display:flex; flex-wrap:wrap; gap:30px;
+}
+.quick-box{
+    flex:1 1 260px; max-width:340px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--glass-border);
+    padding:16px; border-radius:var(--radius);
+}
+.quick-box pre{
+    background:#00000040; 
+    padding:12px; border-radius:10px;
+    overflow-x:auto; white-space:pre-wrap;
+}
+
+/* FOOTER */
+footer{
+    padding:24px 7vw;
+    border-top:1px solid rgba(255,255,255,0.06);
+    color:var(--muted);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+}
+
+@media(max-width:640px){
+    h2{font-size:30px;}
+    .preview-thumb{height:160px;}
+    nav{display:none;}
+}
+a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    border-radius: 12px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #00ffa8, #06b6d4);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div style="display:flex;align-items:center;gap:12px">
+      <div class="logo"><img src="https://raw.githubusercontent.com/YOCRRZ224/Orrivn/4559a0efc53e2aa248916f51f5d77327471945e8/assets/splash.png" alt="" /></div>
+      <div>
+          <strong>ORRIVN</strong><br>
+          <span style="font-size:12px;color:var(--muted)">Fluid • Fluent • Smooth</span>
+      </div>
+  </div>
+
+  <nav>
+    <button class="nav-btn" onclick="scrollToId('features')">Features</button>
+    <button class="nav-btn" onclick="scrollToId('gallery')">Gallery</button>
+    <button class="nav-btn cta" onclick="scrollToId('download')">Get Started</button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-left">
+        <div class="kicker" style="color:var(--accent2);font-weight:600">Self-hosted • Offline • Fast</div>
+        <h2>Transform any device into a <span class="accent">personal media server</span></h2>
+        <p class="lead">Upload huge files using chunked uploads, download YouTube videos, auto-merge audio/video, and stream content directly from your browser.</p>
+
+        <div class="hero-cta">
+            <a class="btn primary" href="https://github.com/YOCRRZ224/Orrivn" ><i class="ph ph-cloud-arrow-up"></i> Start Now</a>
+            <a class="btn" onclick="scrollToId('gallery')">Live Demo</a>
+        </div>
+    </div>
+
+    <div class="hero-right">
+        <div class="preview-card">
+            <div class="preview-thumb">
+                <img src="https://raw.githubusercontent.com/YOCRRZ224/Orrivn/refs/heads/main/assets/file_0000000091107206b488fc5965490d04.png" />
+            </div>
+            <div style="margin-top:10px;font-size:14px;color:var(--muted)">
+                Preview
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="features">
+    <h3 style="margin-bottom:16px">Features</h3>
+    <div class="features-grid">
+        <div class="feature">
+            <h3><i class="ph ph-server"></i> Chunk Uploads</h3>
+            <p>Upload any size reliably with resume-safe chunking.</p>
+        </div>
+        <div class="feature">
+            <h3><i class="ph ph-cloud-arrow-down"></i> YouTube Downloader</h3>
+            <p>Download video+audio in one merged MP4.</p>
+        </div>
+        <div class="feature">
+            <h3><i class="ph ph-play"></i> In-Browser Playback</h3>
+            <p>Smart video/audio player with resume support.</p>
+        </div>
+        <div class="feature">
+            <h3><i class="ph ph-shield-check"></i> Secure Storage</h3>
+            <p>Local-first design with safe path validation.</p>
+        </div>
+        <div class="feature">
+            <h3><i class="ph ph-circuitry"></i> API Ready</h3>
+            <p>Use /api/videos for apps, TV UI, or automation.</p>
+        </div>
+        <div class="feature">
+            <h3><i class="ph ph-rocket"></i> Ultra Lightweight</h3>
+            <p>Runs perfectly on Termux, Android TV & mini PCs.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PARALLAX STRIP -->
+<section id="gallery" class="parallax-strip">
+    <h3 style="padding-left:7vw;margin-bottom:18px">Gallery</h3>
+    <div class="parallax-inner">
+        <div class="parallax-item" style="background-image:url('https://raw.githubusercontent.com/YOCRRZ224/Orrivn/refs/heads/main/assets/file_0000000039d072069cc5667564b78278.png')"></div>
+        <div class="parallax-item" style="background-image:url('https://raw.githubusercontent.com/YOCRRZ224/Orrivn/refs/heads/main/assets/file_0000000091107206b488fc5965490d04.png')"></div>
+        <div class="parallax-item" style="background-image:url('https://raw.githubusercontent.com/YOCRRZ224/Orrivn/refs/heads/main/assets/file_00000000d8d07206a346348c7f6cf6ce.png')"></div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+    <div>
+        <h3 style="margin:0">Ready to host your own media hub?</h3>
+        <p style="margin:6px 0 0;color:var(--muted)">Run ORRIVN anywhere — Termux, server, or local device.</p>
+    </div>
+    <button class="btn primary"  ><a href="https://github.com/YOCRRZ224/Orrivn">Get Started</a></button>
+</section>
+
+
+<footer>
+    <div>ORRIVN — Fluid • Fluent • Smooth</div>
+    <div style="display:flex;gap:10px;">
+        <a style="color:var(--muted)">GitHub</a>
+        <a style="color:var(--muted)">Docs</a>
+    </div>
+</footer>
+
+<script>
+function scrollToId(id){
+    document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
