@@ -1,9 +1,10 @@
 <p align="center">
   <img src="assets/splash.png" width="400">
 </p>
-
 <div align="center">
-# ORRIVN  
+  
+## ORRIVN  
+  
 ### **Next-Gen Media Hub • Chunk Uploader • YouTube Downloader • Media Server**
 
 <img src="https://img.shields.io/badge/Status-Stable-brightgreen?style=for-the-badge">
