@@ -12,7 +12,12 @@
 <img src="https://img.shields.io/badge/Platform-Android%20|%20Linux%20|%20Termux-orange?style=for-the-badge">
 <img src="https://img.shields.io/badge/Python-3.10+-yellow?style=for-the-badge&logo=python">
 <img src="https://img.shields.io/badge/Flask-Backend-black?style=for-the-badge&logo=flask">
+# ORRIVN — Next-Gen Media Hub
 
+### 🚀 Live Landing Page  
+Click the badge below to open the ORRIVN Landing Page:
+
+[![Open ORRIVN Landing Page](https://img.shields.io/badge/VIEW%20LANDING%20PAGE-00FFA8?style=for-the-badge&logo=google-chrome&logoColor=061015)](https://yocrrz224.github.io/Orrivn/)
 ---
 
 **ORRIVN** is a powerful, lightweight, and modern self-hosted media hub that supports:
