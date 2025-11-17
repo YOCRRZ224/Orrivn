@@ -1,6 +1,8 @@
 <div align="center">
-
-# 🌌 ORRIVN  
+<p align="center">
+  <img src="assets/logo.png" width="400">
+</p>
+# ORRIVN  
 ### **Next-Gen Media Hub • Chunk Uploader • YouTube Downloader • Media Server**
 
 <img src="https://img.shields.io/badge/Status-Stable-brightgreen?style=for-the-badge">
@@ -94,9 +96,9 @@ Open main.py:
 MEDIA_FOLDER = "/path/to/your/media/folder"
 ```
 ### 5. Start server
-
+```bash
 python3 main.py
-
+```
 Your app runs on:
 
 http://0.0.0.0:5000
@@ -138,7 +140,7 @@ URL → /download_youtube
 
 ---
 
-🌐 API Documentation
+### 🌐 API Documentation
 
 📌 List videos
 
