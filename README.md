@@ -79,7 +79,7 @@ Designed for **Termux, Android TV, Linux servers, or local machines.**
 
 ### 1. Clone the project
 ```bash
-git clone https://yocrrz224.github.io/Orrivn/
+git clone https://github.com/YOCRRZ224/Orrivn
 cd orrivn
 ```
 ### 2. Install dependencies
