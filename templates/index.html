@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORRIVN</title>
+<link rel="icon" type="image/x-icon" href="static/assets/fav.png">
+<link rel="stylesheet" href="/static/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Oxanium:wght@400;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="loading-screen">
+    <div class="container" id="boot"></div>
+<div class="made-by" id="made-by">FLUID-FLUENT-SMOOTH</div>
+</div>
+
+<div class="main-container" style="display: none;">
+<h1>ORRIVN</h1>
+
+<!-- Tabs -->
+<div class="tabs">
+    <button class="tab-btn" data-type="new"><i class="ph ph-cloud-arrow-up"></i></button>
+    <button class="tab-btn active" data-type="video"><i class="ph ph-video"></i></button>
+    <button class="tab-btn" data-type="audio"><i class="ph ph-music-notes"></i></button>
+</div>
+
+<!-- Search -->
+<input type="text" id="searchBox" placeholder="Search media...">
+
+<div id="new-media-section" style="display: none;">
+    <div class="media-card" id="up">
+    <h2>Upload File</h2>
+    <input type="file" id="fileInput">
+    <button onclick="uploadFile()"><i class="ph ph-upload-simple"></i></button>
+    <div id="uploadStatus"></div>
+    </div>
+    <div class="media-card" id="youtube-downloader">
+        <h2>YouTube Downloader</h2>
+        <input type="text" id="youtubeUrl" placeholder="Enter YouTube URL">
+        <button onclick="downloadYoutube()"><i class="ph ph-download-simple"></i></button>
+        <div id="youtubeStatus"></div>
+    </div>
+    <div class="media-card" id="youtube-audio-downloader">
+        <h2>YouTube Audio Downloader</h2>
+        <input type="text" id="youtubeAudioUrl" placeholder="Enter YouTube URL">
+        <button onclick="downloadYoutubeAudio()"><i class="ph ph-download-simple"></i></button>
+        <div id="youtubeAudioStatus"></div>
+    </div>
+    <div class="media-card" id="app1">
+    	<button class="installBtn" id="app">Install App</button>
+    </div>
+</div>
+<!-- Media grid -->
+<div class="media-grid" id="mediaGrid">
+    {% for file in files %}
+    {% set lower = file.lower() %}
+    {% if lower.endswith(('.mp3','.wav','.ogg')) %}
+        {% set mtype='audio' %}
+    {% elif lower.endswith(('.mp4','.webm','.ogg')) %}
+        {% set mtype='video' %}
+    {% elif lower.endswith(('.jpg','.jpeg','.png','.gif')) %}
+        {% set mtype='images' %}
+    {% else %}
+        {% set mtype='others' %}
+    {% endif %}
+    <div class="media-card" data-name="{{ file | lower }}" data-type="{{ mtype }}">
+        <strong>{{ file.rsplit('.', 1)[0] }}</strong>
+        <button class="delete-btn" data-filename="{{ file }}"><i class="ph ph-trash"></i></button>
+        {% if mtype=='audio' %}
+            <audio class="player"  controls>
+                <source src="/media/{{ file }}" type="audio/{{ lower.split('.')[-1] }}">
+            </audio>
+        {% elif mtype=='video' %}
+            <div class="video-container">
+                <video>
+                    <source src="/media/{{ file }}" type="video/{{ lower.split('.')[-1] }}">
+                </video>
+                <div class="resume-prompt">
+                    <p>Resume from where you left off?</p>
+                    <button class="resume-btn">Resume</button>
+                    <button class="start-over-btn">Start Over</button>
+                </div>
+            </div>
+        {% elif mtype=='images' %}
+            <img src="/media/{{ file }}" alt="{{ file }}">
+        {% else %}
+            <a class="download-link" href="/media/{{ file }}">Download {{ file }}</a>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+</div>
+<script src="/static/js/main.js"></script>
+</body>
+</html>
