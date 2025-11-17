@@ -1,7 +1,8 @@
-<div align="center">
 <p align="center">
-  <img src="assets/logo.png" width="400">
+  <img src="assets/splash.png" width="400">
 </p>
+
+<div align="center">
 # ORRIVN  
 ### **Next-Gen Media Hub • Chunk Uploader • YouTube Downloader • Media Server**
 
