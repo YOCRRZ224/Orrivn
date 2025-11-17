@@ -217,12 +217,6 @@ POST /delete_media/<filename>
 
 ---
 
-🖼 Screenshots (Add your images)
-
-![Boot Screen](assets/boot.png)
-![Dashboard](assets/dashboard.png)
-![Media Grid](assets/media-grid.png)
-![Video Player](assets/video-player.png)
 
 
 ---
